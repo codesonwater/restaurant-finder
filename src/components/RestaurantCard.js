@@ -1,11 +1,12 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { RestaurantContext } from "../../App";
+import styles from "../../styles";
 
 
 export default function RestaurantCard({ restaurant }) {
-    const {setSelectedRestaurant } = useContext(RestaurantContext);
+    const { setSelectedRestaurant } = useContext(RestaurantContext);
     const navigation =useNavigation()
     const handlePress = () => {
         setSelectedRestaurant(restaurant);
@@ -21,21 +22,3 @@ export default function RestaurantCard({ restaurant }) {
   );
 }
 
-const styles = StyleSheet.create({
-  card: {
-    width: 350,
-    backgroundColor: "#444444",
-    marginTop: 10,
-    marginBottom: 10,
-  },
-  cardImage: {
-    width: 350,
-    height: 210,
-  },
-  cardTitle: {
-    fontSize: 28,
-    color: "white",
-    fontWeight: "600",
-    padding: 10,
-  },
-});
